@@ -15,7 +15,6 @@ while points:
     cl = [points.pop()]
 
     k = 0
-
     while k < len(cl):
         q = [p1 for p1 in points if dist(p1, cl[k]) < 1]
         for p1 in q: points.remove(p1)

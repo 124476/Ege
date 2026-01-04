@@ -1,16 +1,8 @@
-mp = {
-    "k0": "kL1",
-    "k1": "kS1",
-    "11": "0L1",
-    "01": "1L1",
-}
-
-
 def f(m):
     m = list("k" + m + "k")
 
     q = 0
-    i = len(m) - 1
+    i = 0
 
     while True:
         c = mp[f"{m[i]}{q}"]
@@ -25,4 +17,15 @@ def f(m):
     return "".join(m)[1:-1]
 
 
-print(int(f(bin(135)[2:]), 2))
+for x in "01456789":
+    mp = {
+        "k0": "kR1",
+
+        "k1": "kS1",
+        "21": "3R1",
+        "31": f"{x}R1",
+        f"{x}1": "2R1",
+    }
+
+    if sum(int(y) for y in f("2" * 764 + "3" * 122 + f"{x}" * 114)) == 3496:
+        print(x)

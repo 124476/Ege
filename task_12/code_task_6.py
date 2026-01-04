@@ -1,5 +1,6 @@
 mp = {
     "k0": "kL1",
+
     "k1": "kS1",
     "11": "0L1",
     "01": "1L1",
@@ -25,4 +26,7 @@ def f(m):
     return "".join(m)[1:-1]
 
 
-print(int(f(bin(135)[2:]), 2))
+for i in range(1000):
+    if int(f(bin(i)[2:]), 2) == 320:
+        print(i)
+        break
